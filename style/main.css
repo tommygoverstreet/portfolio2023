@@ -1,0 +1,24 @@
+:root {
+    --primary: #021936;
+    --secondary: #d4d5da;
+    --accent: #fc5508;
+    --dark: #000;
+    --light: #fff;
+    --submit: rgb(0, 255, 0);
+    --cancel: rgb(255, 0, 0);
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100vw;
+    height: 100%;
+}
