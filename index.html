@@ -7,16 +7,76 @@
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    <header>
+   <!-----Top header----->
+  <header class="secondaryBG">
+    <!-----Menu Button----->
+    <div id="menuBtn" class="flex-col" onclick="menuToggle()">
+      <div id="bar1" class="bar"></div>
+      <div id="bar2" class="bar"></div>
+      <div id="bar3" class="bar"></div>
+    </div>
 
-    </header>
-<main>
+    <!---Logo------------>
+    <svg id="logo-38" class="float-R" width="60" height="100%" viewBox="0 0 78 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M55.5 0H77.5L58.5 32H36.5L55.5 0Z" class="ccustom" fill="var(--accent)"></path>
+      <path d="M35.5 0H51.5L32.5 32H16.5L35.5 0Z" class="ccompli1" fill="var(--primary)"></path>
+      <path d="M19.5 0H31.5L12.5 32H0.5L19.5 0Z" class="ccompli2" fill="var(--light)"></path>
+    </svg>
+  </header>
 
-</main>
+  <!-----Mobile Nav Off Screen ----->
+  <main id="mobileNav" class="container secondaryBG hide">
+    <ul class="nav-list centerDiv">
+      <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+  </main>
 
-<footer>
-    <p class="copyright">Copyright &copy; Tommy Overstreet 2023</p>
-</footer>
+  <!--- Login Buttons-->
+  <main id="loginButtons" class="primaryBG">
+    <div class="btn-container centerDiv">
+      <button type="button" id="login" onclick="loginToggle()" class="accentBG box1 bold">Login</button>
+      <button type="button" id="register" class="secondaryBG box1 bold">Sign Up</button>
+    </div>
+  </main>
+
+  <!----------------------->
+  <!-- Login Form Template-->
+
+  <!---Opens with Login Button--->
+  <main id="loginTemplate" class="primaryBG hide">
+    <form action="login.php" method="post" class="lightBG centerDiv">
+
+      <!---Label & Input Container--->
+      <div class="container">
+
+        <!---Username--->
+        <label for="userName" class="bold">Username</label>
+        <input type="text" id="userName" placeholder="Enter Username" name="userName" autocomplete="true" required>
+        <!---Password--->
+        <label for="password" class="bold">Password</label>
+        <input type="password" id="password" placeholder="Enter password..." name="password" autocomplete="true" required>
+
+        <!---Submit Button--->
+        <button type="button" class="accentBG bold" onclick="login()">Submit</button>
+
+        <!--- Remember Me Checkbox--->
+        <label for="remember">
+          <input type="checkbox" checked="checked" name="remember">
+          <span class="pl-10 text-light">Remember me</span></label>
+      </div>
+
+      <!---Btn Container---->
+      <div class="container">
+
+        <!---Cancel Button-->
+      </div>
+    </form>
+  </main>
+  <!----------------------->
+  <!----------------------->
     <script src="script/app.js"></script>
 </body>
 </html>
