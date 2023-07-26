@@ -1,25 +1,33 @@
 // Assign Symbols to Query Selectors
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+
+// Fake Users
 const users = [
   {
     username: "userName",
-    password: "password"
+    password: "password",
   },
   {
     username: "user1",
-    password: "password"
-  }
+    password: "password",
+  },
 ];
+
+// Login Form Toggle
 const loginToggle = () => {
   $("#loginButtons").classList.toggle("hide");
   $("#loginTemplate").classList.toggle("hide");
 };
 
+const signUpToggle = () => {
+  $("#loginButtons").classList.toggle("hide");
+  $("#signUpTemplate").classList.toggle("hide");
+}
+
+// Menu Toggle
 const menuToggle = () => {
   $("#mobileNav").classList.toggle("hide");
-  $("#loginTemplate").classList.add("hide");
-  $("#loginButtons").classList.toggle("hide");
   $("#bar1").classList.toggle("change1");
   $("#bar2").classList.toggle("change2");
   $("#bar3").classList.toggle("change3");
@@ -33,7 +41,8 @@ const login = () => {
     if (userName == users[i].username && password == users[i].password) {
       console.log(userName + " is logged in succesfully");
     } else {
-      alert("Please correct username and/or password.");
+     
     }
+    
   }
 };
