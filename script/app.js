@@ -23,7 +23,7 @@ const loginToggle = () => {
 const signUpToggle = () => {
   $("#loginButtons").classList.toggle("hide");
   $("#signUpTemplate").classList.toggle("hide");
-}
+};
 
 // Menu Toggle
 const menuToggle = () => {
