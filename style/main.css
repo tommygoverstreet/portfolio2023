@@ -342,7 +342,7 @@ span.password {
 }
 
 /*-----Screen Sizing -----------**/
-
+/*-----Screen Width------------*/
 /* Smaller than 600px */
 @media screen and (max-width: 600px) {
   span.password {
@@ -367,4 +367,20 @@ span.password {
 /* Larger than 900px */
 @media screen and (min-width: 900px) {
   
+}
+
+/*--------Screen Height----------*/
+@media screen and (max-height: 550px) {
+  header {
+    height: 12vh;
+  }
+  #menuBtn {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-height: 362px) {
+  #logo-38, #menuBtn {
+transform: scale(0.6);
+  }
 }
