@@ -21,7 +21,7 @@ html,
 body {
   width: 100vw;
   font-family: Aerial, Helvetica, sans-serif;
-  font-size: 1.4em;
+  font-size: 1.2em;
   overflow-x: hidden;
 }
 
@@ -31,11 +31,65 @@ header, main, section, footer {
 
 header {
   height: 8vh;
-  padding: 0 6px;
+  padding: 0px 25px;
+  position: fixed;
+  z-index: 10;
 }
 
 main {
-  padding-top: 8vh;
+  min-height: 100vh;
+  padding-top: 12vh;
+}
+
+/*---Form---*/
+form {
+  width: 85%;
+  max-width: 500px !important;
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 12px;
+}
+
+label {
+  margin-top: 40px;
+}
+
+button,
+textarea, select,
+input,
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"], input[type="dropdown"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 0.8em;
+  width: 100%;
+}
+
+input,
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"] {
+  display: inline-block;
+  border: 1px solid var(--primary);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  margin-top: 18px;
+}
+
+select option {
+  color: var(--dark);
+}
+
+datalist {
+  display: none;
 }
 
 /* Stacked Bar Icon */
@@ -45,6 +99,7 @@ main {
   cursor: pointer;
   padding-top: 8px;
   float: left;
+  z-index: 5;
 }
 
 /* Bars */
@@ -55,6 +110,7 @@ main {
   border-radius: 4px;
 }
 
+/* Transform X for Close Button */
 .change1 {
   transform: translate(0, 9px) rotate(-45deg);
 }
@@ -81,94 +137,70 @@ main {
 /* Mobile Nav Off Screen */
 #mobileNav {
   width: 100vw;
-  height: 100vh;
-  z-index: 99;
+  height: 90vh;
+  z-index: 4;
+  position: fixed;
+  overflow: hidden;
 }
 
+/* Mobile Nav List */
 #mobileNav .nav-list {
   display: flex;
   flex-direction: column;
 }
 
+/* Mobile Nav List Item */
 #mobileNav .nav-list .nav-item {
   font-size: 1.8em;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
-
-/*---Form---*/
-form {
-  width: 85%;
-  max-width: 500px !important;
-  padding: 15px;
-  font-size: 1em;
-  border-radius: 12px;
-}
-
-button,
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="text"] {
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 12px;
-  font-size: 0.8em;
-  width: 100%;
-}
-
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="text"] {
-  display: inline-block;
-  border: 1px solid var(--primary);
-}
-
-button {
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.1em;
-  margin-top: 18px;
-}
-
+/* Password padding */
 span.password {
   padding-top: 16px;
 }
 
-.bold {
-  font-weight: 800;
+#signUpTemplate .container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 75px;
 }
 
-/*---Backgrounds---*/
+/*---Backgrounds----------------------*/
+/* Dark Background Default */
 .secondaryBG {
   background: var(--secondary);
   color: var(--primary);
 }
 
+/* Light Background (Default) */
 .primaryBG {
   background: var(--primary);
   color: var(--light);
 }
 
+/* Accent Background */
 .accentBG {
   background: var(--accent);
   color: var(--light);
 }
 
+/* White background */
 .lightBG {
   background: var(--light);
   color: var(--primary);
 }
 
 /*---Box Shadows---*/
+/* Dark Shadow */
 .box1 {
-  box-shadow: 1px 1px 18px var(--secondary);
+  box-shadow: 1px 1px 8px var(--secondary);
   border: none;
 }
 
+/* Light Background */
 .box2 {
-  box-shadow: 1px 1px 18px var(--primary);
+  box-shadow: 1px 1px 8px var(--primary);
   border: none;
 }
 
@@ -261,6 +293,7 @@ span.password {
   padding-right: 10px;
 }
 
+/* X & Y Center Div */
 .centerDiv {
   top: 50%;
   left: 50%;
@@ -268,23 +301,49 @@ span.password {
   position: absolute;
 }
 
+.auto {
+  margin: auto;
+}
+
+/* Display Flex */
 .flex-row,
 .flex-col {
   display: flex;
 }
 
+/* Flex Row */
 .flex-row {
   flex-direction: row;
 }
 
+/* Flex Column */
 .flex-col {
   flex-direction: column;
 }
 
+/* Hover */
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* Bold Text */
+.bold {
+  font-weight: 800;
+}
+
+/* Center Text */
+.center {
+  text-align: center;
+}
+
+/* Hide Content */
 .hide {
   display: none;
 }
 
+/*-----Screen Sizing -----------**/
+
+/* Smaller than 600px */
 @media screen and (max-width: 600px) {
   span.password {
     display: block;
@@ -292,6 +351,7 @@ span.password {
   }
 }
 
+/* Smaller than 900px */
 @media screen and (max-width: 900px) {
   #loginForm {
     display: flex;
@@ -299,7 +359,12 @@ span.password {
   }
 }
 
+/* Larger than 600px but smaller than 900px*/
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  
+}
+
+/* Larger than 900px */
 @media screen and (min-width: 900px) {
   
-  }
 }
