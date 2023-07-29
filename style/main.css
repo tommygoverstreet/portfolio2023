@@ -1,7 +1,7 @@
 :root {
   --primary: #f3f3f3;
   --secondary: #111;
-  --accent: rgb(11, 104, 125);
+  --accent: steelblue;
 }
 
 html {
@@ -163,13 +163,14 @@ hr {
   overflow: visible;
 }
 
-label,
 button,
 input,
 select,
 textarea,
 optgroup {
   padding: 12px;
+  font-size: 17px;
+  letter-spacing: 0.1em;
 }
 
 button,
@@ -194,6 +195,7 @@ input {
 button,
 select {
   text-transform: none;
+  font-weight: 750;
 }
 
 button,
@@ -286,6 +288,8 @@ h6 {
 /*------Top Fixed Header--------------*/
 header {
   background: var(--secondary);
+  top: 0;
+  left: 0;
   min-height: 50px;
   position: fixed;
   padding: 0 10px;
@@ -307,6 +311,23 @@ section .container {
   padding-top: 65px;
 }
 
+/*---------Form---------------*/
+form {
+  max-width: 550px;
+  margin: 50px auto;
+}
+
+button {
+  margin-top: 20px;
+  border: none;
+}
+
+label {
+  margin-top: 15px !important;
+  font-size: 17px;
+  padding: 12px 0;
+}
+
 /*----------Intro Section------------*/
 #intro {
   min-height: 100vh;
@@ -323,6 +344,7 @@ section .container {
 
 .intro-icon {
   font-size: 52px;
+  text-shadow: 0 0 8px var(--accent);
 }
 
 /*---- Nav Icons ------------------------*/
@@ -371,7 +393,7 @@ section .container {
 
 /*-----------------Overlay --- #mobileNav-----*/
 .overlay {
-  height: 90vh;
+  height: 100%;
   width: 100%;
   margin-top: 50px;
   position: fixed;
@@ -467,21 +489,19 @@ section .container {
 
 /*-----Cards--------------------------------*/
 .card-container {
-  padding: 20px;
-  margin: 75px 0;
+  padding: 25px;
+  margin: 50px 0;
 }
 
 .card {
   max-width: 450px;
-  box-shadow: -2px -2px 2px var(--accent);
-  border: 0.5px solid var(--accent);
   padding: 15px;
   border-radius: 8px;
   margin: 20px;
 }
 
 .card-header {
-  padding: 10px 0;
+  padding: 4px 0;
 }
 
 .card-header p {
@@ -490,11 +510,52 @@ section .container {
 }
 
 .card-body {
-  padding: 10px 0;
+  padding: 0 0 0 35px;
+}
+.card-body p {
+  text-align: left;
 }
 
-.card-body p {
-  text-align: inline-block;
+/*----Accordion-------------------------*/
+
+button.accordion {
+  height: 100px;
+  margin: 0;
+  border-radius: 0;
+  font-size: 18px;
+}
+.accordion {
+  background-color: var(--secondary);
+  color: var(--primary);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--primary);
+  outline: none;
+  transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+  background-color: var(--accent);
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: var(--primary);
+  display: none;
+  overflow: hidden;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.panel img {
+  height: 100px;
+}
+
+/*--------Contact Form Section-----------------*/
+#contactSection .container {
+  padding: 45px;
 }
 
 /*---Backgrounds-------------------------------*/
